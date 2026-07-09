@@ -34,7 +34,7 @@ The four labs map 1:1 onto the official course:
 |---|---|---|
 | **1 Rigid body** | bunny (1170 verts) tumbles & bounces; impulse collision | torque-free tumble conserves angular momentum **‖L‖ drift = 0.0** over 1000 steps; elastic sphere (restitution 1) conserves energy **gain 0.000%**; restitution 0.5 bunny decays monotonically 13.50→1.52 J |
 | **2 Cloth** | 21×21 mass-spring drape; implicit vs explicit vs PBD | at dt=1/60, k=8000 **explicit blows up at step 3** (→1e30) while **implicit stays bounded** (2.0); drape settles KE→0.038 J, mean spring strain **0.013%**; cloth-over-sphere **0 penetrating nodes** (min dist = R exactly) |
-| **3 FEM elastic** | 320-tet jelly cube drop; StVK & neo-Hookean | neo-Hookean volume dips **90.1%** at impact, recovers to **96.5%** (StVK 83.3%→91.3% — neo's log-J barrier preserves volume better); energy 1566→770 J, KE→2e-5; stretched-1.5× bar recovers to **99.2%** of rest length |
+| **3 FEM elastic** | 320-tet jelly cube drop; StVK & neo-Hookean | neo-Hookean volume dips **90.1%** at impact, recovers to **96.5%** (StVK 83.3%→91.3% — neo's log-J barrier preserves volume better); energy 1566→770 J, KE→2e-5; a bar stretched 1.5× and released oscillates elastically about its **0.96 m** rest length (lightly damped, still swinging at 1 s — passes through 0.992 m at the final frame, a **3.4% residual** from rest) |
 | **4 Shallow wave** | 120² height-field ripples, interference, floating block | volume conserved to **1.6e-15 m³** (2.5e-13 rel, machine precision); measured wave speed **0.961** vs set c=1.0; floating block settles at **y=-0.2197** vs Archimedes prediction **-0.2194** (0.1% error) |
 
 ### Lab 1 — Rigid body (impulse-based "Angry Bunny")
@@ -63,8 +63,10 @@ Euler at step 3** but is **stable under implicit Euler**; a cloth drapes over a 
 
 Per-tet deformation gradient F = Ds·Bm, first Piola-Kirchhoff stress P(F), nodal forces
 H = -W·P·Bmᵀ. **Verification:** the neo-Hookean jelly conserves volume markedly better than
-StVK during the drop; a bar stretched to 1.5× and released oscillates back to **99.2%** of
-its rest length.
+StVK during the drop; a bar stretched to 1.5× and released oscillates **elastically about its
+rest length** (0.96 m) — a lightly-damped swing (peaks ≈1.1–1.2 m, troughs ≈0.7–0.9 m) that is
+still decaying at the end of the 1 s window, passing through 0.992 m at the final frame (a 3.4%
+residual from rest). See the length-vs-time plot above.
 
 ### Lab 4 — Shallow wave (ripples + interference + floating block)
 ![ripples](results/lab4_ripples.gif) ![floating block](results/lab4_floating_block.gif)
@@ -123,7 +125,8 @@ Each lab self-verifies against a physical invariant and prints the measured valu
 - **Lab 2:** explicit vs implicit stability at identical `dt`/stiffness (explicit → 1e30 at
   step 3, implicit bounded), cloth-over-sphere non-penetration (`0` nodes inside).
 - **Lab 3:** neo-Hookean vs StVK volume during impact, energy decay to rest
-  (`KE_final ≈ 2e-5`), stretched-bar elastic recovery to `99.2%` rest length.
+  (`KE_final ≈ 2e-5`), stretched bar oscillates about its rest length (final `0.992 m` vs `0.96 m`
+  rest → `3.4%` residual; the swing is still lightly-damped-decaying at 1 s, not yet settled).
 - **Lab 4:** water-volume conservation to `1.6e-15 m³`, measured wave speed `0.961 ≈ c`,
   floating-block Archimedes-depth match (`-0.2197` vs `-0.2194`).
 

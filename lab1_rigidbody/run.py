@@ -13,6 +13,7 @@ from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, ROOT)
+sys.path.insert(0, HERE)  # so `from rigidbody import ...` resolves under run_all.py too
 from common.geometry import make_bunny, uv_sphere  # noqa: E402
 from common.viz import ensure_dir, frames_to_gif, shade_faces  # noqa: E402
 from rigidbody import RigidBody, simulate, verify_angular_momentum  # noqa: E402
