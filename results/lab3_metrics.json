@@ -1,0 +1,17 @@
+{
+  "mesh_nodes": 125,
+  "mesh_tets": 320,
+  "mesh_surface_tris": 192,
+  "jelly_gif": "lab3_jelly_drop.gif",
+  "neohookean_vol_min_pct": 90.0827409111799,
+  "neohookean_vol_final_pct": 96.52504448669609,
+  "neohookean_E0": 1566.260199590969,
+  "neohookean_Efinal": 770.0452713075304,
+  "neohookean_KE_final": 2.182272401968841e-05,
+  "stvk_vol_min_pct": 83.25104514071809,
+  "stvk_vol_final_pct": 91.27888773873232,
+  "bar_rest_length": 0.96,
+  "bar_stretched_length": 1.44,
+  "bar_final_length": 0.9922337281190527,
+  "bar_recovery_residual_pct": 3.3576800124013317
+}

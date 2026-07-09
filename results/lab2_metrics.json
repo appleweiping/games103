@@ -1,0 +1,15 @@
+{
+  "drape_gif": "lab2_cloth_drape.gif",
+  "drape_final_minY": 0.11041831933521526,
+  "drape_final_strain_pct": 0.013218927846613746,
+  "drape_final_KE": 0.038279341081908856,
+  "sphere_gif": "lab2_cloth_sphere.gif",
+  "sphere_radius": 0.6,
+  "sphere_min_node_dist": 0.5999999999999999,
+  "sphere_penetrating_nodes": 0,
+  "stability_dt": 0.016666666666666666,
+  "stability_stiffness": 8000.0,
+  "explicit_blowup_step": 3,
+  "explicit_max_coord_at_end": 1e+30,
+  "implicit_max_coord_at_end": 2.0
+}

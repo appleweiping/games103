@@ -1,0 +1,15 @@
+{
+  "ripples_gif": "lab4_ripples.gif",
+  "ripples_cfl": 0.42426406871192845,
+  "ripples_volume_V0": 0.006333450789637023,
+  "ripples_volume_max_drift": 1.5742615544489524e-15,
+  "ripples_volume_rel_drift": 2.48563004077462e-13,
+  "wave_speed_measured": 0.9605774616114929,
+  "wave_speed_set_c": 1.0,
+  "interference_gif": "lab4_interference.gif",
+  "block_gif": "lab4_floating_block.gif",
+  "block_y0": 0.3,
+  "block_settle_y": -0.2196546590350213,
+  "block_archimedes_eq": -0.21943698347107438,
+  "block_volume_max_drift": 5.572298815043989e-15
+}

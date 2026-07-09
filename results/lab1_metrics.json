@@ -1,0 +1,17 @@
+{
+  "bunny_bounce_gif": "lab1_bunny_bounce.gif",
+  "bunny_n_vertices": 1170,
+  "bunny_n_faces": 2160,
+  "restitution0.5_E0": 13.503209850736537,
+  "restitution0.5_Efinal": 1.5180493178685464,
+  "restitution0.5_max_step_energy_increase": -0.010180398916649125,
+  "restitution1.0_E0": 11.76,
+  "restitution1.0_Emax": 11.76,
+  "restitution1.0_max_gain_frac": 0.0,
+  "angular_momentum_drift_max": 0.0,
+  "angular_momentum_L0": [
+    0.4,
+    1.0,
+    0.2
+  ]
+}
