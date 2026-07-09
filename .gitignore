@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# large / regenerable intermediate render frames (GIFs + plots are committed)
+results/lab1_frames/
+results/lab2_drape_frames/
+results/lab2_sphere_frames/
+results/lab3_jelly_frames/
+results/lab4_ripple_frames/
+results/lab4_interf_frames/
+results/lab4_block_frames/
+
+# build / editor
+build/
+dist/
+*.log
+.idea/
+.vscode/
